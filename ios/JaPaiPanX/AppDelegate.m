@@ -11,6 +11,9 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
+@import GoogleMobileAds;
+
 
 @implementation AppDelegate
 
@@ -31,7 +34,30 @@
   rootViewController.view = rootView;
   self.window.rootViewController = rootViewController;
   [self.window makeKeyAndVisible];
+  
+  [[FBSDKApplicationDelegate sharedInstance] application:application
+                           didFinishLaunchingWithOptions:launchOptions];
+  
+  // Initialize the Google Mobile Ads SDK.
+  // Sample AdMob app ID: ca-app-pub-3940256099942544~1458002511
+  [GADMobileAds configureWithApplicationID:@"ca-app-pub-5757928821993113/1151672446"];
+
+  
   return YES;
+}
+
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+            options:(NSDictionary<UIApplicationOpenURLOptionsKey,id> *)options {
+  
+  BOOL handled = [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                                openURL:url
+                                                      sourceApplication:options[UIApplicationOpenURLOptionsSourceApplicationKey]
+                                                             annotation:options[UIApplicationOpenURLOptionsAnnotationKey]
+                  ];
+  // Add any custom logic here.
+  return handled;
 }
 
 @end

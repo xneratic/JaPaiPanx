@@ -55,6 +55,9 @@ class PlaceList extends Component {
                   onPress={() => navigate('PlaceDetailTab', { data: item})}
                 >
                   <Image source={{uri: item.thumbnails.default.url}} style={{width:undefined , height:200 , flex: 1}}/>
+                  <View style={styles.overlayOne}>
+                  <Text style={{color: 'black' , fontWeight: 'bold' , fontSize: 20}}>{item.placename}</Text>
+                  </View>
                 </TouchableOpacity>
               }
               refreshControl = {
@@ -81,6 +84,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     margin: 10,
     color: '#ffffff'
+  },
+  overlayOne: {
+    backgroundColor: 'rgba(255,255,255,0.5)',
+    flex: 1 , 
+    alignItems: 'center',
+    position: 'absolute',
+    bottom: 10,
+    // backgroundColor: 'white',
+    width: '100%'
   }
 });
 

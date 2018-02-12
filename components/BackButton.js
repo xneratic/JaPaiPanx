@@ -10,7 +10,7 @@ class BackButton extends Component {
     return (
       <TouchableOpacity onPress={this._handleDrawer}>
         <View style={{margin:10}}>
-        <Icon name="ios-arrow-dropleft-circle-outline" size={30} color="#900" />
+        <Icon name="ios-arrow-dropleft-circle-outline" size={30} style={{color: 'white'}} />
           {/* <Text>ย้อนกลับ</Text> */}
         </View>
       </TouchableOpacity>

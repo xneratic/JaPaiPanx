@@ -20,7 +20,7 @@ const NavigatorTab = TabNavigator ({
     screen : PlaceScreen,
     navigationOptions: {
       tabBarIcon: ({tintColor}) => (
-        <Icon name="ios-home" style={{color:tintColor}}/>
+        <Icon name="ios-disc" style={{color:tintColor}}/>
       ),
     }
   },
@@ -30,7 +30,7 @@ const NavigatorTab = TabNavigator ({
       tabBarIcon: ({tintColor}) => (
         <Icon name="paper" style={{color:tintColor}}/>
       ),
-      title: "คำศัพท์"
+      title: "คำศัพท์น่ารู้"
     }
   }  
 }, 

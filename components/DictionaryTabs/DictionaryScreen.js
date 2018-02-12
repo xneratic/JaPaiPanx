@@ -8,7 +8,7 @@ const DictionaryStack = StackNavigator ({
   DictionaryListTab:{
     screen: DictionaryList,
     navigationOptions: {
-      title: 'รายการคำศัพท์',
+      title: 'แนะนำคำศัพท์',
       headerStyle: {
         backgroundColor: '#0083FF'
       },

@@ -21,4 +21,6 @@ class Main extends Component {
     return mainScreen;
  }
 }
+
+
 AppRegistry.registerComponent('JaPaiPanX', () => App);
